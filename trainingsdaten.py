@@ -12,7 +12,7 @@ def get_imag(nr):
 
 # Load the digits dataset
 digits = datasets.load_digits()
-get_imag(1001)
+get_imag(1002)
 # Display the first digit
 
 

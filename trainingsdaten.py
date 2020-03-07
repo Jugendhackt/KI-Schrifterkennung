@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # Fraegt Bild ab
 def get_imag(nr):
     plt.figure(1, figsize=(3, 3), frameon=False)
-    plt.imshow(digits.images[nr], cmap=plt.cm.gray_r, interpolation='nearest')
+    #plt.imshow(digits.images[nr], cmap=plt.cm.gray_r, interpolation='nearest')
     plt.axis('off')
     plt.savefig('img2.jpg', bbox_inches='tight', pad_inches=0)
     plt.show()

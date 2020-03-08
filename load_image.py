@@ -8,13 +8,13 @@ import sklearn.svm
 
 
 def load_images():
-    images = 11
+    images = 10
     image_array = np.zeros((images, 64))
 
-    for i in range(images):
+    for i in range(11, 11+images):
         im = plt.imread("img/%02d.jpg" % i)
         im = np.array(im).flatten()
-        image_array[i] = im
+        image_array[i-11] = im
         #plt.imshow(im, cmap='Greys_r')
         # plt.show()
 
@@ -26,7 +26,7 @@ def train_classifier():
     digits = sklearn.datasets.load_digits()
 
     clf_svc = sklearn.svm.SVC(gamma=0.001)
-    clf_svc = sklearn.neural_network.MLPClassifier()
+    #clf_svc = sklearn.neural_network.MLPClassifier()
 
     n_samples = len(digits.images)
     data = digits.images.reshape((n_samples, -1))
@@ -53,5 +53,5 @@ if __name__ == '__main__':
 
     #print(our_images[0])
     classifier = train_classifier()
-    print(classifier.predict(our_images))
-    print(np.array([0, 1, 4, 5, 8, 9, 2, 3, 1, 7, 3]))
+    print("Vorhersage: \t\t%s" % classifier.predict(our_images))
+    print("richtige Zahlen: \t%s" % np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]))

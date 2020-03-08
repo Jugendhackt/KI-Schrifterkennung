@@ -31,9 +31,10 @@ def train_classifier():
     n_samples = len(digits.images)
     data = digits.images.reshape((n_samples, -1))
 
-    fig, ax = plt.subplots(1,10)
+    fig, ax = plt.subplots(1,10, figsize=(18,4))
     for i in range(10):
         ax[i].imshow(data[i].reshape((8,8)), cmap='Greys')
+    plt.tight_layout()
     plt.show()
     #print(data[0])
 
